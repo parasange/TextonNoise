@@ -5,7 +5,6 @@ Original paper and sources: http://www.math-info.univ-paris5.fr/~bgalerne/texton
 
 
 
-
 If you use this code, please, cite :
 
 ```
