@@ -1,5 +1,5 @@
 # TextonNoise
-This repository is a fork of https://github.com/Pandinosaurus/TextonNoise to provide code for VS2015 x64.
+This repository is a fork of https://github.com/Pandinosaurus/TextonNoise to provide code and libraries for VS2015 x64.
 Original paper and sources: http://www.math-info.univ-paris5.fr/~bgalerne/texton_noise/.
 
 
