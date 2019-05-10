@@ -18,6 +18,10 @@
 #include <AntTweakBar.h>
 #include <getopt.h>
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+#include <time.h>
+
 #include "io_png/io_png.h"
 
 // #############################################################################
@@ -119,7 +123,7 @@ GLchar* read_shader_source_from_file(const char* filename)
 {
   FILE* fp = std::fopen(filename, "rb");
   if (fp == NULL) {
-     std::cerr << " *** error: " << std::strerror(errno) << std::endl;
+     std::cerr << " *** read_shader_source_from_file() error: " << std::strerror(errno) << std::endl;
      std::exit(EXIT_FAILURE);
   }
   std::fseek(fp, 0, SEEK_END);
@@ -157,7 +161,7 @@ void compile_shader(GLuint shader)
   GLint compile_status;
   glGetShaderiv(shader, GL_COMPILE_STATUS, &compile_status);
   if (compile_status == GL_FALSE) {
-    std::cerr << " *** error:" << std::endl;
+    std::cerr << " *** compile_shader() error:" << std::endl;
     shader_info_log(shader);
     std::exit(EXIT_FAILURE);
   }
@@ -181,7 +185,8 @@ void link_program(GLuint program)
   GLint link_status;
   glGetProgramiv(program, GL_LINK_STATUS, &link_status);
   if (link_status == GL_FALSE) {
-    std::cerr << " *** error:" << std::endl;
+
+    std::cerr << " *** link_program() error:" << std::endl;
     program_info_log(program);
     std::exit(EXIT_FAILURE);
   }

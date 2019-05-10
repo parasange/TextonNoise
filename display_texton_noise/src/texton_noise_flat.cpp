@@ -17,6 +17,8 @@
 #include <AntTweakBar.h>
 #include <getopt.h>
 
+#include <time.h>
+
 #include "io_png/io_png.h"
 
 // #############################################################################
